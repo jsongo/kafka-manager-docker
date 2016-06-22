@@ -36,9 +36,9 @@ RUN mkdir -p /tmp && \
 
 WORKDIR /kafka-manager-${KM_VERSION}
 
-RUN echo "basicAuthentication.enabled=true\n \
-basicAuthentication.username=\"${LOGIN_USER}\"\n \
-basicAuthentication.password=\"${LOGIN_PWD}\"" >> conf/application.conf
+RUN echo "basicAuthentication.enabled=true" >> conf/application.conf
+RUN echo "basicAuthentication.username=\"${LOGIN_USER}\"" >> conf/application.conf
+RUN echo "basicAuthentication.password=\"${LOGIN_PWD}\"" >> conf/application.conf
 
 EXPOSE 9000
 ENTRYPOINT ["./km.sh"]
